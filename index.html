@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div id="notification-container"></div>
+    <div class="users w-100">
+        <div class="users__add d-flex justify-content-around align-items-center">
+            <div class="users__add--name">
+                <label for="name">Name: </label>
+                <input type="text" name="name" placeholder="Enter name hear">
+            </div>
+
+            <div class="users__add--avatar">
+                <label for="imageURL">Avatar URL</label>
+                <input type="text" name="ava" id="imageURL" placeholder="Paste image URL here">
+            </div>
+
+            <div class="users__add--email">
+                <label for="email">Email: </label>
+                <input type="text" name="email" placeholder="Enter email hear">
+            </div>
+
+            <div class="users__add--city">
+                <label for="city">City: </label>
+                <input type="text" name="city" placeholder="Enter city hear">
+            </div>
+            <button id="create" class="btn">Create</button>
+            <button id="edit" class="btn">Save</button>
+        </div>
+
+        <div id="list-users">
+            <table id="myTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Avatar</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Options</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/a39b26f8c2.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

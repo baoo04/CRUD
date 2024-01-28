@@ -1,0 +1,187 @@
+body,
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.users {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+li {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}
+
+li {
+    border: 1px solid #ccc;
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ffffff;
+    margin: 10px;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}
+
+li:hover {
+    background-color: #e0e0e0;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#edit.btn,
+#create.btn {
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    color: #fff;
+    background-color: #3498db;
+    border: 2px solid #3498db;
+    margin-top: -15px;
+}
+
+#edit.btn:hover,
+#create.btn:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+}
+
+.users__add--name,
+.users__add--avatar,
+.users__add--email,
+.users__add--city {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.7);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+th,
+td {
+    border: 1px solid #dee2e6;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center !important;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #cce5ff;
+}
+
+input[type="text"] {
+    padding: 5px;
+    width: 150px;
+}
+
+#create,
+.edit-btn,
+#save {
+    background-color: #28a745;
+    color: #fff;
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.delete-btn {
+    background: brown;
+    border: none;
+    color: #fff;
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.edit-btn:hover,
+.delete-btn:hover {
+    background-color: blue;
+    color: brown;
+}
+
+#delete {
+    background-color: brown;
+}
+
+#create:hover,
+#edit:hover,
+#save:hover {
+    background-color: #218838;
+}
+
+#notification-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.success-message {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.5s ease-in-out;
+}
