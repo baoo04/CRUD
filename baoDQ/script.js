@@ -1,5 +1,3 @@
-
-
 var usersList = document.querySelector("list-users");
 var usersApi = "https://60becf8e6035840017c17a48.mockapi.io/users";
 var saveBtn = document.querySelector("#edit.btn");
@@ -79,6 +77,27 @@ function createDeleteHandler(id) {
     };
 }
 
+function createUsers(data, callback) {
+    var options = {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+            "Content-Type": "application/json",
+        },
+    };
+    fetch(usersApi, options)
+        .then(function (response) {
+            response.json();
+        })
+        .then(function () {
+            callback();
+            showSuccessMessage("User created!");
+        })
+        .catch(function (error) {
+            showSuccessMessage("User create failed!");
+        });
+}
+
 function handleCreateForm() {
     var createBtn = document.querySelector("#create");
     createBtn.onclick = function () {
@@ -102,27 +121,6 @@ function handleCreateForm() {
             document.querySelector('input[name="name"]').focus();
         });
     };
-}
-
-function createUsers(data, callback) {
-    var options = {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-            "Content-Type": "application/json",
-        },
-    };
-    fetch(usersApi, options)
-        .then(function (response) {
-            response.json();
-        })
-        .then(function () {
-            callback();
-            showSuccessMessage("User created!");
-        })
-        .catch(function (error) {
-            showSuccessMessage("User create failed!");
-        });
 }
 
 function editUser(id) {
@@ -172,18 +170,17 @@ function editUser(id) {
                                 "Content-Type": "application/json",
                             },
                         };
-                        fetch(usersApi + "/" + id, options).then(function (
-                            response
-                        ) {
-                            if (!response.ok) {
-                                throw new Error("Network response was not ok");
-                            }
-                            showSuccessMessage("Edited successfully");
-                            setTimeout(function () {
-                                location.reload(true);
-                            }, 1500);
-                            return response.json();
-                        });
+                        fetch(usersApi + "/" + id, options)
+                            .then(function (response) {
+                                if (!response.ok) {
+                                    throw new Error("Network response was not ok");
+                                }
+                                showSuccessMessage("Edited successfully");
+                                setTimeout(function () {
+                                    location.reload(true);
+                                }, 1500);
+                                return response.json();
+                            });
                     };
                 }
             });
@@ -213,9 +210,6 @@ function deleteUser(id) {
         },
     };
     fetch(usersApi + "/" + id, options)
-        .then(function (response) {
-            return response.json();
-        })
         .then(function () {
             showSuccessMessage("User deleted");
             document.querySelector(".success-message").style.background = "red";
